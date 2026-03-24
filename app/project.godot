@@ -10,9 +10,18 @@ config_version=5
 
 [application]
 
-config/name="Jayce Mind Palace"
+config/name="Mindpalace"
+run/main_scene="uid://cy1d1lff7e2vp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1008
+window/size/viewport_height=2244
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
+window/handheld/orientation=1
 
 [physics]
 
@@ -23,3 +32,4 @@ config/icon="res://icon.svg"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

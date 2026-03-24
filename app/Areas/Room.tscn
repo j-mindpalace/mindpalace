@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cy1d1lff7e2vp"]
+
+[ext_resource type="Texture2D" uid="uid://didoc4ddv5v3u" path="res://kenney_development-essentials/Noise/perlin-noise.png" id="1_dc1gw"]
+
+[node name="Room" type="Node2D" unique_id=127807060]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1331016021]
+
+[node name="LeftWall" type="Node2D" parent="." unique_id=806946697]
+position = Vector2(-110.851, 0)
+rotation = 1.5707964
+skew = -0.5235988
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftWall" unique_id=17038054]
+texture_filter = 1
+rotation = -1.5707964
+texture = ExtResource("1_dc1gw")
+
+[node name="RightWall" type="Node2D" parent="." unique_id=2100751580]
+position = Vector2(110.851, 0)
+rotation = 1.5707964
+skew = 0.5235988
+
+[node name="Sprite2D" type="Sprite2D" parent="RightWall" unique_id=1289726845]
+texture_filter = 1
+rotation = -1.5707964
+scale = Vector2(-1, 1)
+texture = ExtResource("1_dc1gw")
+
+[node name="Floor" type="Node2D" parent="." unique_id=489061484]
+position = Vector2(0, 192)
+rotation = 0.5235988
+skew = 0.5235988
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=612908396]
+texture_filter = 1
+rotation = -1.5707964
+texture = ExtResource("1_dc1gw")
