@@ -1,38 +1,108 @@
 [gd_scene format=3 uid="uid://cy1d1lff7e2vp"]
 
 [ext_resource type="Texture2D" uid="uid://didoc4ddv5v3u" path="res://kenney_development-essentials/Noise/perlin-noise.png" id="1_dc1gw"]
+[ext_resource type="Shader" uid="uid://bqequwyd2bgld" path="res://Shaders/HSV_sprite.gdshader" id="1_l6v68"]
+[ext_resource type="Texture2D" uid="uid://chixqabou06ty" path="res://Textures/placeholder/temp_floor.png" id="2_7pgyj"]
+[ext_resource type="Theme" uid="uid://dx6x5ma4c0b0y" path="res://Resources/main_theme.tres" id="4_vpy00"]
+[ext_resource type="Texture2D" uid="uid://clcprr3lpxh00" path="res://Textures/ui/back_p.png" id="5_4q7j2"]
+[ext_resource type="Texture2D" uid="uid://djswabh2vihx7" path="res://Textures/ui/back.png" id="5_mmmtv"]
+[ext_resource type="Script" uid="uid://b5v751abkblve" path="res://Scripts/TButtonBase.gd" id="6_k513w"]
+[ext_resource type="AudioStream" uid="uid://dyyg6fwqghwky" path="res://Audio/ui/up.wav" id="7_qgess"]
+[ext_resource type="AudioStream" uid="uid://ftqdr821f48a" path="res://Audio/ui/down.wav" id="8_6ev3p"]
+
+[sub_resource type="Gradient" id="Gradient_vpy00"]
+colors = PackedColorArray(1, 0.86, 0.6, 1, 0.93, 0.63333, 0.39060003, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mmmtv"]
+gradient = SubResource("Gradient_vpy00")
+width = 2244
+height = 2244
+fill_from = Vector2(0.0042735045, 0.0042735045)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7pgyj"]
+shader = ExtResource("1_l6v68")
+shader_parameter/hue_shift = 4.7499999933364734e-08
+shader_parameter/saturation_mult = 0.0
+shader_parameter/value_mult = 1.0
+shader_parameter/brightness_add = 4.7499999933364734e-08
+shader_parameter/contrast_mult = 1.0000000475
 
 [node name="Room" type="Node2D" unique_id=127807060]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1331016021]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2085891655]
+rotation = 1.5707964
+texture = SubResource("GradientTexture2D_mmmtv")
 
-[node name="LeftWall" type="Node2D" parent="." unique_id=806946697]
-position = Vector2(-110.851, 0)
+[node name="BG" type="Node2D" parent="." unique_id=1292226605]
+position = Vector2(0, -150)
+scale = Vector2(2.695, 2.695)
+
+[node name="LeftWall" type="Node2D" parent="BG" unique_id=806946697]
+position = Vector2(-110.851, -64)
 rotation = 1.5707964
 skew = -0.5235988
 
-[node name="Sprite2D" type="Sprite2D" parent="LeftWall" unique_id=17038054]
+[node name="Sprite2D" type="Sprite2D" parent="BG/LeftWall" unique_id=17038054]
 texture_filter = 1
+material = SubResource("ShaderMaterial_7pgyj")
 rotation = -1.5707964
-texture = ExtResource("1_dc1gw")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7pgyj")
 
-[node name="RightWall" type="Node2D" parent="." unique_id=2100751580]
-position = Vector2(110.851, 0)
+[node name="RightWall" type="Node2D" parent="BG" unique_id=2100751580]
+position = Vector2(110.851, -64)
 rotation = 1.5707964
 skew = 0.5235988
 
-[node name="Sprite2D" type="Sprite2D" parent="RightWall" unique_id=1289726845]
+[node name="Sprite2D" type="Sprite2D" parent="BG/RightWall" unique_id=1289726845]
 texture_filter = 1
 rotation = -1.5707964
-scale = Vector2(-1, 1)
-texture = ExtResource("1_dc1gw")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7pgyj")
 
-[node name="Floor" type="Node2D" parent="." unique_id=489061484]
-position = Vector2(0, 192)
+[node name="Floor" type="Node2D" parent="BG" unique_id=489061484]
+position = Vector2(0, 128)
 rotation = 0.5235988
 skew = 0.5235988
 
-[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=612908396]
+[node name="Sprite2D" type="Sprite2D" parent="BG/Floor" unique_id=612908396]
 texture_filter = 1
 rotation = -1.5707964
 texture = ExtResource("1_dc1gw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1331016021]
+
+[node name="Control" type="HBoxContainer" parent="Camera2D" unique_id=706437602]
+offset_left = -473.0
+offset_top = -1036.0
+offset_right = 477.0
+offset_bottom = -886.0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Camera2D/Control" unique_id=51263824 node_paths=PackedStringArray("upSound", "downSound")]
+layout_mode = 2
+texture_normal = ExtResource("5_mmmtv")
+texture_pressed = ExtResource("5_4q7j2")
+texture_hover = ExtResource("5_mmmtv")
+texture_disabled = ExtResource("5_mmmtv")
+texture_focused = ExtResource("5_mmmtv")
+script = ExtResource("6_k513w")
+upSound = NodePath("upSound")
+downSound = NodePath("downSound")
+
+[node name="upSound" type="AudioStreamPlayer" parent="Camera2D/Control/TextureButton" unique_id=1693799936]
+stream = ExtResource("7_qgess")
+pitch_scale = 2.0
+
+[node name="downSound" type="AudioStreamPlayer" parent="Camera2D/Control/TextureButton" unique_id=1588644810]
+stream = ExtResource("8_6ev3p")
+pitch_scale = 2.0
+
+[node name="Label" type="Label" parent="Camera2D/Control" unique_id=1482821449]
+layout_mode = 2
+theme = ExtResource("4_vpy00")
+theme_override_font_sizes/font_size = 75
+text = "______'s Room"
+horizontal_alignment = 1
+vertical_alignment = 1
