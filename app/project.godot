@@ -13,14 +13,15 @@ config_version=5
 config/name="Mindpalace"
 run/main_scene="uid://cy1d1lff7e2vp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1008
-window/size/viewport_height=2244
+window/size/viewport_width=504
+window/size/viewport_height=1122
 window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [physics]
@@ -33,3 +34,4 @@ rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_2d=1

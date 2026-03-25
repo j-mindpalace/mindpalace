@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ykdsk5e25ulf"]
+
+[ext_resource type="Shader" uid="uid://bqequwyd2bgld" path="res://Shaders/HSV_sprite.gdshader" id="1_815t4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8xnhe"]
+shader = ExtResource("1_815t4")
+shader_parameter/hue_shift = -0.34699996898249996
+shader_parameter/saturation_mult = 1.0
+shader_parameter/value_mult = 1.0
+shader_parameter/brightness_add = 0.0
+shader_parameter/contrast_mult = 1.0
+
+[sub_resource type="Gradient" id="Gradient_vpy00"]
+colors = PackedColorArray(0.9, 0.91, 1, 1, 0.8301799, 0.50219995, 0.93, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kbixg"]
+gradient = SubResource("Gradient_vpy00")
+width = 2244
+height = 2244
+fill_from = Vector2(0.0042735045, 0.0042735045)
+
+[node name="Main" type="Node2D" unique_id=408938739]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=489754571]
+material = SubResource("ShaderMaterial_8xnhe")
+position = Vector2(4.9999695, 6.999954)
+rotation = 2.1921334
+scale = Vector2(1.26, 1.26)
+texture = SubResource("GradientTexture2D_kbixg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=955323512]

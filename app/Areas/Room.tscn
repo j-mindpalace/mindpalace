@@ -1,86 +1,167 @@
 [gd_scene format=3 uid="uid://cy1d1lff7e2vp"]
 
-[ext_resource type="Texture2D" uid="uid://didoc4ddv5v3u" path="res://kenney_development-essentials/Noise/perlin-noise.png" id="1_dc1gw"]
+[ext_resource type="Material" uid="uid://he4t503hr5d6" path="res://Shaders/new_shader_material.tres" id="1_k513w"]
 [ext_resource type="Shader" uid="uid://bqequwyd2bgld" path="res://Shaders/HSV_sprite.gdshader" id="1_l6v68"]
 [ext_resource type="Texture2D" uid="uid://chixqabou06ty" path="res://Textures/placeholder/temp_floor.png" id="2_7pgyj"]
+[ext_resource type="Material" uid="uid://61gods6brjao" path="res://Shaders/mult.tres" id="3_6ev3p"]
+[ext_resource type="Texture2D" uid="uid://bhjhoxm1nvurw" path="res://Shaders/shadow_gradient.tres" id="4_qgess"]
 [ext_resource type="Theme" uid="uid://dx6x5ma4c0b0y" path="res://Resources/main_theme.tres" id="4_vpy00"]
 [ext_resource type="Texture2D" uid="uid://clcprr3lpxh00" path="res://Textures/ui/back_p.png" id="5_4q7j2"]
 [ext_resource type="Texture2D" uid="uid://djswabh2vihx7" path="res://Textures/ui/back.png" id="5_mmmtv"]
 [ext_resource type="Script" uid="uid://b5v751abkblve" path="res://Scripts/TButtonBase.gd" id="6_k513w"]
 [ext_resource type="AudioStream" uid="uid://dyyg6fwqghwky" path="res://Audio/ui/up.wav" id="7_qgess"]
 [ext_resource type="AudioStream" uid="uid://ftqdr821f48a" path="res://Audio/ui/down.wav" id="8_6ev3p"]
+[ext_resource type="Texture2D" uid="uid://dk45p0my3rvuy" path="res://Textures/ui/generic.png" id="12_0cllx"]
+[ext_resource type="Texture2D" uid="uid://qw15t0aalcw1" path="res://Textures/ui/button192x/button192x.png" id="12_sjjfi"]
+[ext_resource type="Texture2D" uid="uid://8jsch7yoxowp" path="res://Textures/ui/button192x/p_button192x.png" id="13_0v8fj"]
+[ext_resource type="Texture2D" uid="uid://bqimi8s4skv5m" path="res://Textures/ui/p_generic.png" id="13_80hon"]
+[ext_resource type="Texture2D" uid="uid://e4xhy623nkn8" path="res://Textures/placeholder/daily.svg" id="14_5dji1"]
+[ext_resource type="Texture2D" uid="uid://c0yxo508xj77x" path="res://Textures/ui/button192x/grayed_button192x.png" id="14_riftq"]
+[ext_resource type="Texture2D" uid="uid://bi01tksdhnhmw" path="res://Textures/placeholder/shop.svg" id="15_kxia6"]
+[ext_resource type="Texture2D" uid="uid://6b3kaox1fyen" path="res://Textures/placeholder/add_notes_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" id="17_riftq"]
+[ext_resource type="Theme" uid="uid://dp7n3lfqkcik3" path="res://Resources/main_menu_buttons.tres" id="18_8i7jo"]
+[ext_resource type="Texture2D" uid="uid://qnhov7btyxi4" path="res://Textures/placeholder/diversity_2_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" id="19_8i7jo"]
+[ext_resource type="Texture2D" uid="uid://cpgrchhla2a0y" path="res://Textures/placeholder/swap_vert_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" id="22_jwh8d"]
+[ext_resource type="Texture2D" uid="uid://bkttd4y6kco54" path="res://Textures/placeholder/savings_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" id="23_a5oqo"]
+[ext_resource type="Texture2D" uid="uid://ctojn7jixcg37" path="res://Textures/ui/panel9s.png" id="24_fevof"]
 
-[sub_resource type="Gradient" id="Gradient_vpy00"]
-colors = PackedColorArray(1, 0.86, 0.6, 1, 0.93, 0.63333, 0.39060003, 1)
+[sub_resource type="Gradient" id="Gradient_6ev3p"]
+colors = PackedColorArray(0.9, 0.91, 1, 1, 0.8301799, 0.50219995, 0.93, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mmmtv"]
-gradient = SubResource("Gradient_vpy00")
+gradient = SubResource("Gradient_6ev3p")
 width = 2244
 height = 2244
 fill_from = Vector2(0.0042735045, 0.0042735045)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7pgyj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgess"]
 shader = ExtResource("1_l6v68")
-shader_parameter/hue_shift = 4.7499999933364734e-08
-shader_parameter/saturation_mult = 0.0
-shader_parameter/value_mult = 1.0
-shader_parameter/brightness_add = 4.7499999933364734e-08
-shader_parameter/contrast_mult = 1.0000000475
+shader_parameter/hue_shift = -0.06599995563500005
+shader_parameter/saturation_mult = 1.7030000808925
+shader_parameter/value_mult = 0.7430000352925
+shader_parameter/brightness_add = 0.5500000736250001
+shader_parameter/contrast_mult = 0.4950000235125
+
+[sub_resource type="Gradient" id="Gradient_76gbo"]
+colors = PackedColorArray(0.76662326, 0.7317794, 0.86083245, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0cllx"]
+gradient = SubResource("Gradient_76gbo")
+width = 256
+height = 256
 
 [node name="Room" type="Node2D" unique_id=127807060]
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2085891655]
-rotation = 1.5707964
+position = Vector2(-325, -148)
+rotation = 2.1921334
+scale = Vector2(1.26, 1.26)
 texture = SubResource("GradientTexture2D_mmmtv")
+
+[node name="Outline" type="Node2D" parent="." unique_id=969456124]
+modulate = Color(0, 0, 0, 0.65882355)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -147.28)
+scale = Vector2(2.814, 2.433)
+
+[node name="Sprite2D" type="Sprite2D" parent="Outline" unique_id=1029969413]
+texture_filter = 1
+position = Vector2(-120.28001, -84.2)
+rotation = -0.3490659
+scale = Vector2(0.25, 0.25)
+skew = 0.3490659
+texture = ExtResource("2_7pgyj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Outline" unique_id=1989380750]
+texture_filter = 1
+position = Vector2(0, 87.565)
+rotation = -0.3490659
+scale = Vector2(0.25, 0.24999999)
+skew = -0.8726647
+texture = ExtResource("2_7pgyj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Outline" unique_id=2102189550]
+texture_filter = 1
+position = Vector2(120.281, -84.2)
+rotation = 0.3490659
+scale = Vector2(0.25, 0.25)
+skew = -0.3490659
+texture = ExtResource("2_7pgyj")
 
 [node name="BG" type="Node2D" parent="." unique_id=1292226605]
 position = Vector2(0, -150)
-scale = Vector2(2.695, 2.695)
+scale = Vector2(2.695, 2.33)
 
 [node name="LeftWall" type="Node2D" parent="BG" unique_id=806946697]
-position = Vector2(-110.851, -64)
+position = Vector2(-120.28, -84.2)
 rotation = 1.5707964
-skew = -0.5235988
+skew = -0.34906584
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/LeftWall" unique_id=17038054]
 texture_filter = 1
-material = SubResource("ShaderMaterial_7pgyj")
+material = ExtResource("1_k513w")
 rotation = -1.5707964
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_7pgyj")
 
 [node name="RightWall" type="Node2D" parent="BG" unique_id=2100751580]
-position = Vector2(110.851, -64)
+position = Vector2(120.281, -84.2)
 rotation = 1.5707964
-skew = 0.5235988
+skew = 0.34906584
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/RightWall" unique_id=1289726845]
 texture_filter = 1
+material = ExtResource("1_k513w")
 rotation = -1.5707964
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_7pgyj")
 
+[node name="Shadow" type="Sprite2D" parent="BG/RightWall" unique_id=151268404]
+texture_filter = 1
+material = ExtResource("3_6ev3p")
+rotation = -1.5707964
+texture = ExtResource("4_qgess")
+
 [node name="Floor" type="Node2D" parent="BG" unique_id=489061484]
-position = Vector2(0, 128)
-rotation = 0.5235988
-skew = 0.5235988
+position = Vector2(0, 87.565)
+rotation = 0.34906584
+skew = 0.87266463
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/Floor" unique_id=612908396]
 texture_filter = 1
+material = SubResource("ShaderMaterial_qgess")
 rotation = -1.5707964
-texture = ExtResource("1_dc1gw")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7pgyj")
+
+[node name="Shadow" type="Sprite2D" parent="BG/Floor" unique_id=1865559336]
+texture_filter = 1
+material = ExtResource("3_6ev3p")
+rotation = 1.5707964
+texture = SubResource("GradientTexture2D_0cllx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1331016021]
 
-[node name="Control" type="HBoxContainer" parent="Camera2D" unique_id=706437602]
-offset_left = -473.0
-offset_top = -1036.0
-offset_right = 477.0
-offset_bottom = -886.0
+[node name="Control3" type="Control" parent="Camera2D" unique_id=1676630959]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -504.0
+offset_top = -1122.0
+offset_right = 504.0
+offset_bottom = 1122.0
+
+[node name="Control" type="HBoxContainer" parent="Camera2D/Control3" unique_id=706437602]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 86.0
+offset_right = 981.0
+offset_bottom = 236.0
 theme_override_constants/separation = 60
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="Camera2D/Control" unique_id=51263824 node_paths=PackedStringArray("upSound", "downSound")]
+[node name="TextureButton" type="TextureButton" parent="Camera2D/Control3/Control" unique_id=51263824 node_paths=PackedStringArray("upSound", "downSound")]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("5_mmmtv")
 texture_pressed = ExtResource("5_4q7j2")
@@ -91,18 +172,366 @@ script = ExtResource("6_k513w")
 upSound = NodePath("upSound")
 downSound = NodePath("downSound")
 
-[node name="upSound" type="AudioStreamPlayer" parent="Camera2D/Control/TextureButton" unique_id=1693799936]
+[node name="upSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control/TextureButton" unique_id=1693799936]
 stream = ExtResource("7_qgess")
 pitch_scale = 2.0
 
-[node name="downSound" type="AudioStreamPlayer" parent="Camera2D/Control/TextureButton" unique_id=1588644810]
+[node name="downSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control/TextureButton" unique_id=1588644810]
 stream = ExtResource("8_6ev3p")
 pitch_scale = 2.0
 
-[node name="Label" type="Label" parent="Camera2D/Control" unique_id=1482821449]
+[node name="Label" type="Label" parent="Camera2D/Control3/Control" unique_id=1482821449]
 layout_mode = 2
 theme = ExtResource("4_vpy00")
 theme_override_font_sizes/font_size = 75
 text = "______'s Room"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="Camera2D/Control3" unique_id=1995677693]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -430.0
+offset_top = -516.0
+offset_right = -10.0
+offset_bottom = -316.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MiniButtons" type="Control" parent="Camera2D/Control3/Control2" unique_id=436127795]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tasks" type="TextureButton" parent="Camera2D/Control3/Control2/MiniButtons" unique_id=1611357241 node_paths=PackedStringArray("upSound", "downSound")]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 128.0
+grow_vertical = 0
+size_flags_stretch_ratio = 2.0
+texture_normal = ExtResource("12_0cllx")
+texture_pressed = ExtResource("13_80hon")
+texture_hover = ExtResource("12_0cllx")
+texture_disabled = ExtResource("12_0cllx")
+texture_focused = ExtResource("12_0cllx")
+script = ExtResource("6_k513w")
+upSound = NodePath("upSound")
+downSound = NodePath("downSound")
+
+[node name="upSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/MiniButtons/Tasks" unique_id=1668345422]
+stream = ExtResource("7_qgess")
+pitch_scale = 2.0
+
+[node name="downSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/MiniButtons/Tasks" unique_id=282635775]
+stream = ExtResource("8_6ev3p")
+pitch_scale = 2.0
+
+[node name="Daily" type="TextureRect" parent="Camera2D/Control3/Control2/MiniButtons/Tasks" unique_id=1218021025]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -44.5
+offset_right = 48.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_5dji1")
+
+[node name="Label" type="Label" parent="Camera2D/Control3/Control2/MiniButtons/Tasks" unique_id=269454061]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.5
+offset_top = -29.0
+offset_right = 33.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("18_8i7jo")
+text = "tasks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shop" type="TextureButton" parent="Camera2D/Control3/Control2/MiniButtons" unique_id=848340743 node_paths=PackedStringArray("upSound", "downSound")]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -128.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_stretch_ratio = 2.0
+texture_normal = ExtResource("12_0cllx")
+texture_pressed = ExtResource("13_80hon")
+texture_hover = ExtResource("12_0cllx")
+texture_disabled = ExtResource("12_0cllx")
+texture_focused = ExtResource("12_0cllx")
+script = ExtResource("6_k513w")
+upSound = NodePath("upSound")
+downSound = NodePath("downSound")
+
+[node name="upSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/MiniButtons/Shop" unique_id=2105433150]
+stream = ExtResource("7_qgess")
+pitch_scale = 2.0
+
+[node name="downSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/MiniButtons/Shop" unique_id=1444319997]
+stream = ExtResource("8_6ev3p")
+pitch_scale = 2.0
+
+[node name="Daily" type="TextureRect" parent="Camera2D/Control3/Control2/MiniButtons/Shop" unique_id=1952570608]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_kxia6")
+
+[node name="Label" type="Label" parent="Camera2D/Control3/Control2/MiniButtons/Shop" unique_id=1488212459]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.5
+offset_top = -29.0
+offset_right = 33.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("18_8i7jo")
+text = "shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Headmates" type="TextureButton" parent="Camera2D/Control3/Control2/MiniButtons" unique_id=1626600060 node_paths=PackedStringArray("upSound", "downSound")]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_stretch_ratio = 2.0
+texture_normal = ExtResource("12_0cllx")
+texture_pressed = ExtResource("13_80hon")
+texture_hover = ExtResource("12_0cllx")
+texture_disabled = ExtResource("12_0cllx")
+texture_focused = ExtResource("12_0cllx")
+script = ExtResource("6_k513w")
+upSound = NodePath("upSound")
+downSound = NodePath("downSound")
+
+[node name="upSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/MiniButtons/Headmates" unique_id=842450342]
+stream = ExtResource("7_qgess")
+pitch_scale = 2.0
+
+[node name="downSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/MiniButtons/Headmates" unique_id=855985545]
+stream = ExtResource("8_6ev3p")
+pitch_scale = 2.0
+
+[node name="Daily" type="TextureRect" parent="Camera2D/Control3/Control2/MiniButtons/Headmates" unique_id=428417518]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -46.0
+offset_right = 53.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("19_8i7jo")
+
+[node name="Label" type="Label" parent="Camera2D/Control3/Control2/MiniButtons/Headmates" unique_id=1364843786]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.5
+offset_top = -29.0
+offset_right = 33.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("18_8i7jo")
+text = "headmates"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/Control3/Control2" unique_id=1119073828]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -274.0
+offset_right = 194.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="Camera2D/Control3/Control2/HBoxContainer" unique_id=151263151 node_paths=PackedStringArray("upSound", "downSound")]
+layout_direction = 2
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+texture_normal = ExtResource("12_sjjfi")
+texture_pressed = ExtResource("13_0v8fj")
+texture_hover = ExtResource("12_sjjfi")
+texture_disabled = ExtResource("14_riftq")
+texture_focused = ExtResource("12_sjjfi")
+script = ExtResource("6_k513w")
+upSound = NodePath("upSound")
+downSound = NodePath("downSound")
+
+[node name="upSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/HBoxContainer/TextureButton" unique_id=1408824706]
+stream = ExtResource("7_qgess")
+pitch_scale = 2.0
+
+[node name="downSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/HBoxContainer/TextureButton" unique_id=552930435]
+stream = ExtResource("8_6ev3p")
+pitch_scale = 2.0
+
+[node name="Journal" type="Sprite2D" parent="Camera2D/Control3/Control2/HBoxContainer/TextureButton" unique_id=498635584]
+modulate = Color(0.17283267, 0.17283267, 0.17283261, 1)
+position = Vector2(98, 113)
+texture = ExtResource("17_riftq")
+
+[node name="Label" type="Label" parent="Camera2D/Control3/Control2/HBoxContainer/TextureButton" unique_id=352684411]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_top = 30.0
+offset_right = 28.5
+offset_bottom = 19.0
+grow_horizontal = 2
+theme = ExtResource("18_8i7jo")
+text = "Journal"
+horizontal_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="Camera2D/Control3/Control2/HBoxContainer" unique_id=1247262366 node_paths=PackedStringArray("upSound", "downSound")]
+layout_direction = 2
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+texture_normal = ExtResource("12_sjjfi")
+texture_pressed = ExtResource("13_0v8fj")
+texture_hover = ExtResource("12_sjjfi")
+texture_disabled = ExtResource("14_riftq")
+texture_focused = ExtResource("12_sjjfi")
+script = ExtResource("6_k513w")
+upSound = NodePath("upSound")
+downSound = NodePath("downSound")
+
+[node name="upSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/HBoxContainer/TextureButton2" unique_id=269494400]
+stream = ExtResource("7_qgess")
+pitch_scale = 2.0
+
+[node name="downSound" type="AudioStreamPlayer" parent="Camera2D/Control3/Control2/HBoxContainer/TextureButton2" unique_id=686240684]
+stream = ExtResource("8_6ev3p")
+pitch_scale = 2.0
+
+[node name="Journal" type="Sprite2D" parent="Camera2D/Control3/Control2/HBoxContainer/TextureButton2" unique_id=777674163]
+modulate = Color(0.17283267, 0.17283267, 0.17283261, 1)
+position = Vector2(98, 113)
+texture = ExtResource("22_jwh8d")
+
+[node name="Label" type="Label" parent="Camera2D/Control3/Control2/HBoxContainer/TextureButton2" unique_id=1874203802]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_top = 30.0
+offset_right = 28.5
+offset_bottom = 19.0
+grow_horizontal = 2
+theme = ExtResource("18_8i7jo")
+theme_override_font_sizes/font_size = 19
+text = "Swap Fronting"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Camera2D/Control3/Control2" unique_id=623624305]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 22.0
+offset_right = 288.0
+offset_bottom = 72.0
+theme = ExtResource("18_8i7jo")
+
+[node name="Label" type="Label" parent="Camera2D/Control3/Control2/Panel" unique_id=1741292717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("18_8i7jo")
+theme_override_font_sizes/font_size = 38
+text = "001"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Icon" type="TextureRect" parent="Camera2D/Control3/Control2/Panel" unique_id=151767629]
+layout_mode = 0
+offset_left = -49.0
+offset_right = -1.0
+offset_bottom = 48.0
+texture = ExtResource("23_a5oqo")
+stretch_mode = 5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Control3" unique_id=929393676]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 1246.0
+texture = ExtResource("24_fevof")
+region_rect = Rect2(0, 2, 516, 516)
+patch_margin_left = 128
+patch_margin_top = 128
+patch_margin_right = 128
+patch_margin_bottom = 128

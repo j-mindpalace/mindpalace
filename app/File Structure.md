@@ -16,7 +16,7 @@
 	- Decor
 	- Items
 	- Actors
-### res://UIScenes
+### res://Interfaces
 - This directory contains user interface scenes
 	- Popups
 	- Menus
